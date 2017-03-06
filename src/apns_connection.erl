@@ -60,19 +60,19 @@
 -type path()         :: string().
 -type notification() :: binary().
 -type type()         :: cert | token.
--opaque connection() :: #{ name       := name()
-                         , apple_host := host()
-                         , apple_port := inet:port_number()
+-opaque connection() :: #{ name       => name()
+                         , apple_host => host()
+                         , apple_port => inet:port_number()
                          , certfile   => path()
                          , keyfile    => path()
-                         , type       := type()
+                         , type       => type()
                          }.
 
--type state()        :: #{ connection      := connection()
-                         , gun_connection  := pid()
-                         , client          := pid()
-                         , backoff         := non_neg_integer()
-                         , backoff_ceiling := non_neg_integer()
+-type state()        :: #{ connection      => connection()
+                         , gun_connection  => pid()
+                         , client          => pid()
+                         , backoff         => non_neg_integer()
+                         , backoff_ceiling => non_neg_integer()
                          }.
 
 %%%===================================================================
